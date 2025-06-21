@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Website</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="container1">
+            <h1 class="title">Shop</h1>
+
+            <!-- Hamburger button -->
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+            <nav class="navbar" id="navbar">
+                <ul>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="women.html">Women</a></li>
+                    <li><a href="kid.html">Children</a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <img src="img/search.png" alt="1" onclick="performSearch()">
+                <input type="text" id="searchInput" name="search" placeholder="search Here....">
+
+            </div>
+            <div id="img">
+                <a href="#" class="img"><img src="img/cart.png" alt="2"></a>
+                <span>0</span>
+                <a href="#" class="img"><img src="img/logo.png" alt="3"></a>
+            </div>
+
+        </div>
+        <div class="fullscreen-slideshow">
+            <div class="slide fade">
+                <img src="img/img1.jpg" alt="Image 1">
+                <div class="slide-text">New Arrivals – Men’s Collection</div>
+            </div>
+            <div class="slide fade">
+                <img src="img/img2.jpg" alt="Image 2">
+                <div class="slide-text">Elegant Styles – Women’s Wear</div>
+            </div>
+            <div class="slide fade">
+                <img src="img/img4.jpg" alt="Image 3">
+                <div class="slide-text">Kids Fashion – Comfortable & Cute</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- <script>
+        function performSearch() {
+            const query = document.getElementById("searchInput").value.toLowerCase();
+
+            // Example data (replace with actual items/pages of your site)
+            const items = [
+                { name: "men jackets", url: "men.html" },
+                { name: "women dresses", url: "women.html" },
+                { name: "kids shoes", url: "children.html" },
+                { name: "summer collection", url: "explore.html" },
+            ];
+
+            // Search logic
+            const result = items.find(item => item.name.includes(query));
+
+            if (result) {
+                window.location.href = result.url;
+            } else {
+                alert("No results found for: " + query);
+            }
+        }
+        function toggleMenu() {
+            const navList = document.querySelector(".navbar ul");
+            navList.classList.toggle("show");
+        }
+
+        // Optional: Run search when user presses Enter
+        document.getElementById("searchInput").addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+                performSearch();
+            }
+        });
+    </script> -->
+    <script src="script.js"></script>
+    <script>
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("slide");
+
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+
+            slides[slideIndex - 1].style.display = "block";
+
+            setTimeout(showSlides, 2000); // 2 seconds per slide
+        }
+
+        showSlides();
+    </script>
+
+
+</body>
+
+</html>

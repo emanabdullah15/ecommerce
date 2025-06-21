@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+                                /* Navigation Bar Part */
+.container1 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 10px 20px;
+    background-color: cornsilk;
+    position: relative;
+}
+
+/* Title */
+.container1 h1 {
+    font-weight: 600;
+}
+
+/* Hamburger button (hidden by default) */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Navbar styles */
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.navbar ul li {
+    padding: 4px 6px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    padding: 6px 8px;
+    border-radius: 4px;
+    color: black;
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+    background-color: cadetblue;
+    color: white;
+}
+
+/* Search box */
+.container1 .search {
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-end;
+    gap: 0;
+    margin-left: 20px;
+    margin-right: 500px;
+    
+}
+
+.container1 .search img {
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border: 1px solid black;
+    border-right: none;
+    /* border-radius: 50px 0 0 50px; */
+    padding: 2px
+
+}
+
+.container1 .search input[type="text"] {
+    padding: 3px 8px;
+    border: 1px solid black;
+    border-left: none;
+    /* border-radius: 0 50px 50px 0; */
+    min-width: 120px;
+}
+
+/* Cart and logo images */
+.container1 #img{
+    display: flex;
+}
+.container1 a.img {
+    padding: 8px;
+    
+}
+
+.container1 a.img img {
+    width: 24px;
+    height: 24px;
+
+}
+
+#img span{
+    border-radius: 100%;
+    position: absolute;
+    padding: 1px 1px;
+    
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .container1 {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .search {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container1 {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+      
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        display: none; /* hidden by default */
+        background-color: cornsilk;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .navbar ul.show {
+        display: flex; /* show when toggled */
+    }
+
+    .search {
+        width: 100%;
+        margin: 10px 10px;
+        justify-content: flex-start;
+      
+    }
+    
+    .search input[type="text"] {
+        width: 100%;
+    }
+    
+    .container1 a.img {
+        align-self: flex-start;
+        margin-top: 10px;
+    }
+}
+
+                                    /* Main Screen Part */
+
+
+/* Fullscreen Slideshow Container */
+.fullscreen-slideshow {
+  position: relative;
+  width: 100%;
+  height: 90vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+/* Each Slide */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Slide Text */
+.slide-text {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+/* Fade Animation */
+.fade {
+  animation: fadeEffect 1s ease-in-out;
+}
+
+@keyframes fadeEffect {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+/* Responsive Text */
+@media (max-width: 768px) {
+  .slide-text {
+    font-size: 1.2em;
+    bottom: 8%;
+  }
+}
+
+

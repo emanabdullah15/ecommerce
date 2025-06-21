@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore - Clothing Shop</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="container1">
+            <h1 class="title">Shop</h1>
+
+            <!-- Hamburger button -->
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+            <nav class="navbar" id="navbar">
+                <ul>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="women.html">Women</a></li>
+                    <li><a href="kid.html">Children</a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <img src="img/search.png" alt="1" onclick="performSearch()">
+                <input type="text" id="searchInput" name="search" placeholder="search Here....">
+
+            </div>
+            <div id="img">
+                <a href="#" class="img"><img src="img/cart.png" alt="2"></a>
+                <span>0</span>
+                <a href="#" class="img"><img src="img/logo.png" alt="3"></a>
+            </div>
+        </div>
+
+        <header class="header">
+            <h1 class="page-title">Explore Our Latest Collections</h1>
+        </header>
+
+        <!-- Countdown Timer -->
+        <section class="countdown-banner">
+            <h2>🔥 Mega Sale Ends In:</h2>
+            <div id="countdown">
+                <span id="days">00</span> Days
+                <span id="hours">00</span> Hours
+                <span id="minutes">00</span> Min
+                <span id="seconds">00</span> Sec
+            </div>
+        </section>
+
+        <!-- Filter Buttons -->
+        <section class="filter-section">
+            <h2>Filter by Product Type</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn">T-Shirts</button>
+                <button class="filter-btn">Jeans</button>
+                <button class="filter-btn">Dresses</button>
+                <button class="filter-btn">Shoes</button>
+                <button class="filter-btn">Accessories</button>
+            </div>
+        </section>
+
+        <!-- Product Image Grid -->
+        <section class="product-section">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="img/1.webp" alt="T-shirt" />
+                    <h3>Casual T-Shirt</h3>
+                    <p>Price: Rs. 3,000</p>
+                    <p>Category: T-Shirt</p>
+                    <p>Size: Small, Medium, Large</p>
+                </div>
+                <div class="product-card">
+                    <img src="img/57.jfif" alt="Jeans" />
+                    <h3>Blue Denim Jeans</h3>
+                    <p>Price: Rs. 3,000</p>
+                    <p>Category: Jeans</p>
+                    <p>Size: 30, 32, 34</p>
+                </div>
+                <div class="product-card">
+                    <img src="img/25.jpeg" alt="Shoes" />
+                    <h3>Running Shoes</h3>
+                    <p>Price: Rs. 5,000</p>
+                    <p>Category: Shoes</p>
+                    <p>Size: 8, 9, 10</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonial-section">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>“Absolutely love the quality and fast shipping!”</p>
+                    <h4>- Ayesha K.</h4>
+                </div>
+                <div class="testimonial-card">
+                    <p>“Stylish, affordable, and true to size. Will shop again!”</p>
+                    <h4>- Zohaib M.</h4>
+                </div>
+                <div class="testimonial-card">
+                    <p>“The kids’ collection is adorable. Great variety!”</p>
+                    <h4>- Farah R.</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>We are a modern clothing store bringing style, comfort, and quality to your wardrobe. Explore all
+                        categories and stay trendy!</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="kids.html">Kids</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <p>Email: info@clothingshop.com</p>
+                    <p>Phone: +92-300-0000000</p>
+                    <p>Location: Faisalabad, Pakistan</p>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div id="social-icons-js" class="social-icons"></div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Clothing Shop. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript Countdown -->
+    <script>
+        const countdown = () => {
+            const endDate = new Date("2025-07-01T23:59:59").getTime();
+            const now = new Date().getTime();
+            const distance = endDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+
+            if (distance < 0) {
+                document.getElementById("countdown").textContent = "Offer Ended";
+            }
+        };
+
+        setInterval(countdown, 1000);
+    </script>
+    <script>
+  const socialIcons = [
+    { name: "Facebook", url: "#", img: "https://cdn-icons-png.flaticon.com/512/145/145802.png" },
+    { name: "Instagram", url: "#", img: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png" },
+    { name: "Twitter", url: "#", img: "https://cdn-icons-png.flaticon.com/512/733/733579.png" },
+    { name: "YouTube", url: "#", img: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png" },
+  ];
+
+  const container = document.getElementById("social-icons-js");
+
+  socialIcons.forEach(icon => {
+    const a = document.createElement("a");
+    a.href = icon.url;
+    a.target = "_blank";
+    a.innerHTML = `<img src="${icon.img}" alt="${icon.name}" />`;
+    container.appendChild(a);
+  });
+</script>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
